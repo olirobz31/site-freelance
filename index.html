@@ -72,8 +72,112 @@
     <h2>Questionnaire</h2>
         <p>Pour mieux comprendre vos besoins et vous proposer une solution parfaitement adaptée, merci de prendre quelques instants pour remplir ce questionnaire.</p>
 
-     <!-- Intégration du Google Form -->
-<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfVSkThEt7Y7dicAj2UJ07BFG6bbeFFSk_TFRDgw9o2n67TTw/viewform?embedded=true" width="640" height="650" frameborder="0" marginheight="0" marginwidth="0">Chargement…</iframe></section><br>
+     <main class="page">
+    <div class="center-wrap">
+      <header class="brand">
+        <img src="logo-placeholder.svg" alt="Logo" class="logo">
+        <div class="brand-text">
+          <h1>Demande de devis</h1>
+          <p class="tag">Formulaire multi-étapes premium</p>
+        </div>
+        <button id="themeToggle" class="theme-toggle" aria-label="Basculer thème">🌓</button>
+      </header>
+
+      <section class="card form-card" aria-labelledby="form-title">
+        <div class="progress-wrap" aria-hidden="false">
+          <div class="progress" id="progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"></div>
+        </div>
+
+        <form id="quoteForm" class="multi-form" method="post" action="send.php" novalidate>
+
+          <!-- Honeypot anti-spam -->
+          <input type="text" name="website" id="website" class="honeypot" autocomplete="off" tabindex="-1">
+
+          <!-- Step 1 -->
+          <fieldset class="step active" data-step="1" aria-hidden="false">
+            <legend id="form-title">Vos coordonnées</legend>
+
+            <label for="nom">Nom complet <span class="req">•</span></label>
+            <input id="nom" name="nom" type="text" required autocomplete="name" />
+
+            <label for="email">Email <span class="req">•</span></label>
+            <input id="email" name="email" type="email" required autocomplete="email" />
+
+            <label for="telephone">Téléphone</label>
+            <input id="telephone" name="telephone" type="tel" inputmode="tel" />
+
+            <div class="actions">
+              <button type="button" class="btn next" data-action="next">Suivant →</button>
+            </div>
+          </fieldset>
+
+          <!-- Step 2 -->
+          <fieldset class="step" data-step="2" aria-hidden="true">
+            <legend>Votre projet</legend>
+
+            <label for="prestation">Type de prestation <span class="req">•</span></label>
+            <select id="prestation" name="prestation" required>
+              <option value="">Choisir…</option>
+              <option>Site vitrine</option>
+              <option>Boutique en ligne</option>
+              <option>Application web</option>
+              <option>Refonte de site</option>
+              <option>Autre</option>
+            </select>
+
+            <label for="budget">Budget estimé <span class="req">•</span></label>
+            <select id="budget" name="budget" required>
+              <option value="">Choisir…</option>
+              <option>Moins de 500 €</option>
+              <option>500 - 1500 €</option>
+              <option>1500 - 3000 €</option>
+              <option>3000 € et plus</option>
+            </select>
+
+            <div class="actions two">
+              <button type="button" class="btn prev" data-action="prev">← Retour</button>
+              <button type="button" class="btn next" data-action="next">Suivant →</button>
+            </div>
+          </fieldset>
+
+          <!-- Step 3 -->
+          <fieldset class="step" data-step="3" aria-hidden="true">
+            <legend>Détails</legend>
+
+            <label for="description">Description du projet <span class="req">•</span></label>
+            <textarea id="description" name="description" rows="6" required></textarea>
+
+            <label for="fichiers">Ajouter des fichiers (optionnel)</label>
+            <input id="fichiers" name="fichiers" type="file" multiple />
+
+            <div class="actions two">
+              <button type="button" class="btn prev" data-action="prev">← Retour</button>
+              <button type="button" class="btn next" data-action="next">Suivant →</button>
+            </div>
+          </fieldset>
+
+          <!-- Step 4 - Recap -->
+          <fieldset class="step" data-step="4" aria-hidden="true">
+            <legend>Résumé & envoyer</legend>
+            <div id="recap" class="recap" aria-live="polite"></div>
+
+            <div class="actions two">
+              <button type="button" class="btn prev" data-action="prev">← Retour</button>
+              <button type="submit" class="btn submit">Envoyer la demande</button>
+            </div>
+          </fieldset>
+
+          <div id="formMessages" class="form-messages" role="status" aria-live="polite"></div>
+        </form>
+      </section>
+
+      <footer class="notes">
+        <p>Design premium • Responsive • Accessible • Anti-spam inclus</p>
+      </footer>
+    </div>
+  </main>
+
+  <script src="script.js"></script><br>
 
   <!-- À PROPOS -->
   <section class="section about">
