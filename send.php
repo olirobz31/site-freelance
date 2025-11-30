@@ -23,7 +23,7 @@
 define('DEBUG_MODE', false);
 
 // Votre adresse email (où recevoir les demandes)
-define('EMAIL_DESTINATAIRE', 'olirobz31@gmail.com');
+define('EMAIL_DESTINATAIRE', 'votre-adresse@gmail.com');
 
 // Nom affiché comme expéditeur
 define('NOM_EXPEDITEUR', 'Formulaire de Contact');
@@ -44,8 +44,8 @@ define('METHODE_ENVOI', 'smtp'); // Changez en 'mail' si vous n'utilisez pas SMT
 
 define('SMTP_HOST', 'smtp.gmail.com');
 define('SMTP_PORT', 587);
-define('SMTP_USERNAME', 'olirobz31@gmail.com');
-define('SMTP_PASSWORD', 'xxxxxxxxxxxxxxxx'); // ⚠️ Mot de passe d'application Gmail (pas votre mot de passe normal)
+define('SMTP_USERNAME', 'votre-adresse@gmail.com');
+define('SMTP_PASSWORD', 'votre-mot-de-passe'); // ⚠️ Mot de passe d'application Gmail (pas votre mot de passe normal)
 define('SMTP_ENCRYPTION', 'tls'); // 'tls' ou 'ssl'
 
 // ============================================================
